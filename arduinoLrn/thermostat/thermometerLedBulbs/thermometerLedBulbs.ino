@@ -73,10 +73,16 @@ void loop() {
   Serial.println(" *F");
 
   if (t > 24) {
+    analogWrite(ledG, 0);
+    analogWrite(ledY, 0);
     analogWrite(ledR, brtR);
   } else if (t > 21) {
+    analogWrite(ledG, 0);
     analogWrite(ledY, brtY);
+    analogWrite(ledR, 0);
   } else {
-    analogWrite(ledG, brtG); 
+    analogWrite(ledG, brtG);
+    analogWrite(ledY, 0);
+    analogWrite(ledR, 0);
   }
 }
